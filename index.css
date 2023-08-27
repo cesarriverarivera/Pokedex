@@ -1,0 +1,215 @@
+
+.poke{
+    justify-content: center;
+    height: 75svh; 
+}
+.left{
+    height: 100%;
+    background-color: #e40c62;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 3px solid black;
+    padding-left: 0px;
+}
+.linea{
+    position: absolute;
+    height: 17%;
+    width: 9%;
+    box-shadow: 0px 12px 2px 3px rgba(0, 0, 0, 0.2);
+}
+.linea2{
+    position: absolute;
+    left: 30%;
+    height: 9%;
+    width: 20%;
+    box-shadow: 0px 15px 0px 0px rgba(0, 0, 0, 0.2);
+}
+.luz{
+    
+    align-items: center;
+    height: 22%;
+    
+}
+.circulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 3px solid black;
+    background-color: whitesmoke;
+}
+.circulo-interior{
+    height: 90%;
+    width: 90%;
+    border-radius: 50%;
+    border: 3px solid black;
+    background-color: #3298CB;    
+}
+.tresLuces{
+    column-gap: 5px;
+    justify-content: center;
+    width: 40%;
+    height: 80%;
+}
+.mini-circulo{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 3px solid black;
+}
+.mini-circulo:nth-child(1){
+    background-color: #FF0000;
+}
+.mini-circulo:nth-child(2){
+    background-color: #FECB65;
+}
+.mini-circulo:nth-child(3){
+    background-color: #32CB65;
+}
+.main-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;   
+}
+.display{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 90%;
+    background-color: #e7e0e0;
+    border-bottom-left-radius: 40px;
+    box-shadow: 4px 6px 3px 4px rgba(0, 0, 0, 0.2);
+}
+.decoracion-dual{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    height: 15%;
+}
+.extra-mini-circulo{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #ff0000;
+}
+.foto-poke{
+    align-self: center;
+    height: 70%;
+    width: 85%;
+    border-radius: 15px;
+    border: 2px solid black;
+    background-color: rgb(37, 37, 37);
+}
+.image-display{
+    border-radius:15px ;
+    width: 100%;
+    height: 100%;
+}
+.decoracion-display{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15%;
+}
+.circulo-medio{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: red;
+    border: 3px solid black;
+}
+.menu{
+    height: 20px;
+    width: 20px;
+    background-color: rgb(58, 15, 15);
+}
+.pokeName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8%;
+}
+.pokeName p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #05ff97;
+    height: 100%;
+    width: 35%;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+.rigth{
+    height: 100%;
+    background-color: #e40c62;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid rgb(255, 255, 255);
+    /* border-left: 2px solid black; */
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+.rectangulo-vacio{
+    position:absolute;
+    height: 9%;
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 3px solid black;
+}
+.vacio-trapecio{
+    position: absolute;
+    left: 70%;
+    width: 250px;
+    height: 0px;
+    border-right: 60px solid transparent;
+    border-left: 60px solid transparent;
+    border-top: 100px solid white;
+}
+.buscador{
+    margin-top: 35%;
+}
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+}
+.content-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+    width: 85%;
+    background-color: azure;
+    border-radius: 10px;
+    text-align: center;
+}
+.content-info p{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+.pokedexShape{
+    width: 50%;
+    height: 75%;
+    background-color: #ff0000;
+    clip-path: polygon(0% 0%, 0% 25%, 25% 25%, 35% 14%, 100% 14%, 100% 0%);
+    position: absolute;
+    border-radius: 15px;
+    
+}

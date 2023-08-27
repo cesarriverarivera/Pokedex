@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!-- pure css -->
+    <link rel="stylesheet" href="index.css">
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- barra navegacion -->
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/assets/images/pokelogo.jpg" alt="pokedex" width="30" height="24" class="d-inline-block align-text-top">
+            Pokedex
+          </a>
+        </div>
+      </nav>
+
+    <!-- seccion principal -->
+    <section id="characters">
+        <div class="container mt-2">
+            
+
+            <!-- lado izquierdo -->
+            <div class="row gx-0 mt-3 d-flex poke" id="pokedex"> 
+                <!-- gx quita el padding por defecto de bootstrap("gutter") -->
+                    <div class="col-5 left">
+                        <!-- <div class="pokedexShape"></div> -->
+                        <div class="linea"></div>
+                        <div class="curva"></div>
+                        <div class="linea2"></div>
+                        <div class="luz d-flex">
+                            <div class="circulo mx-2">
+                                <div class="circulo-interior"></div>
+                            </div>
+                            <div class="tresLuces d-flex">
+                                <div class="mini-circulo"></div>
+                                <div class="mini-circulo"></div>
+                                <div class="mini-circulo"></div>
+                            </div>
+                        </div>
+
+                        <div class="main-display mt-3">
+                            <div class="display">
+                                <div class="decoracion-dual">
+                                    <div class="extra-mini-circulo"></div>
+                                    <div class="extra-mini-circulo"></div>
+                                </div>
+                                <div class="foto-poke" id="img-poke">
+                                    <!-- <img class="image-display" src="/assets/images/pokemon.jpg" alt=""> -->
+                                </div>
+                                <div class="decoracion-display">
+                                    <div class="circulo-medio"></div>
+                                    <div class="menu"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pokeName mt-5" id="pokemonName">
+                            <!-- <p>Pikachu</p> -->
+                        </div>
+                    </div> 
+
+
+                    <!-- lado derecho -->
+                    <div class="col-5 rigth">
+                        
+                        <div class="rectangulo-vacio"></div>
+                        <div class="vacio-trapecio"></div>
+
+                        <div class="d-flex justify-content-evenly buscador">
+                            <select id="list" class="col-6 form-select-sm selector" aria-label="Default select example">
+                                <option selected>Escoge un pokemon</option>    
+                            </select>
+                            <button id="btn-buscar" type="button" class="col-4 btn btn-dark">Buscar</button>
+                        </div>
+
+                        <div class="info mt-2">
+                            <div class="content-info" id="content-info">
+                                <!-- <p class="tipo-pokemon">electrico</p> -->
+                                <!-- <p class="habilidades">impact trueno</p> -->
+                            </div>
+                        </div>
+
+                    </div>
+                 
+            </div>
+            
+        </div>
+        
+    </section>
+
+ 
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="poke.js"></script>
+  </body>
+</html>

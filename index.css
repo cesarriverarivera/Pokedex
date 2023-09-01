@@ -265,8 +265,21 @@ body{
     background-color: #232524;
     color: white;
     max-height: 100%;
+    
+}
+.intensificar{
+    animation: ligth 2s infinite;
 }
 
+@keyframes ligth {
+    10%{
+        background-color: #66042b;
+        scale: 1.1;
+    }
+    70%{
+        background-color: #302a2e;
+    }
+}
 .buscador{
     position: relative;
     top: -27%;
@@ -297,6 +310,22 @@ body{
     }
     100%{
         scale: 1;
+    }
+}
+
+.btn-busqueda-aumentar{
+    animation: aumentar 2s infinite;
+}
+
+@keyframes aumentar {
+    10%{
+        scale: 1.1;
+    }
+    50%{
+        scale: 1;
+    }
+    80%{
+        scale: 1.1;
     }
 }
 

@@ -14,6 +14,7 @@ const baseExperience = document.querySelector("#baseExperience");
 const cirucloInterior= document.querySelector("#inside-circle"); //identificador del circulo
 
 const btnChangeInfo = document.querySelector("#btn-change-info");
+const btnStats = document.querySelector("#btn-stats");
 
 const leftSide = document.querySelector("#left");
 const rigthSide = document.querySelector("#rigth");
@@ -34,7 +35,8 @@ fetch(pokeUrl)
     .catch(error => console.log(`error es: ${error}`))
 
 
-function obtenerInfoPokemon (nombre){
+//funcion para limpiar pokedex
+function limpiador () {
     imagePoke.innerHTML=""; //limpia el cuadro de la imagen
     pokemonName.innerHTML=""; //limpia el nombre del pokemon
     contentInfo.innerHTML=""; //limpia el contenido de tipo y habilidades
@@ -42,22 +44,61 @@ function obtenerInfoPokemon (nombre){
     weigth.innerHTML=  ""; //limpia el contenido de peso
     btnChangeInfo.innerHTML=`<img src="/assets/images/ataque.png">`; //limpia boton de movimientos
     btnChangeInfo.classList.remove("cambiar-color"); //quita clase para estilar boton de movimientos
+    btnStats.classList.remove("cambiar-color"); //quita clase para estilar boton de stats
+    btnStats.innerHTML=`<img src="/assets/images/stats.png">`//limpia boton de stats
+}
 
+
+let info = ""; //variable para almacenar informacion extraida de la api
+function obtenerInfoPokemon (nombre){
+    limpiador() //resetea los valores
     fetch(`${pokeUrlInfo}/${nombre}`)
     .then(response => response.json())
     .then(data =>{
-        const info = data;
+        info = data;
         displayInfoPokemon(info) //muestra la info basica en display
-        console.log(data)
-
-        //evento para mostar info de movements de pokemon
-        btnChangeInfo.addEventListener("click", ()=>{
-            contentInfo.innerHTML= "";
-            displayMoreInfoPokemon(info);
-            btnChangeInfo.classList.add("cambiar-color")
-        })
+        console.log(data) 
     })
 }
+
+
+
+//evento para mostar info de movements de pokemon
+btnChangeInfo.addEventListener("click", btnMovement)
+//evento para mostar info de stats de pokemon
+btnStats.addEventListener("click", btnStat)
+
+
+
+//funcion para el boton movimientos
+let btnClikeado = false;
+function btnMovement () {
+    if(btnClikeado == false){
+        contentInfo.innerHTML= "";
+        btnChangeInfo.classList.add("cambiar-color")
+        displayMoreInfoPokemon(info);
+        btnClikeado =true
+    } else {
+        limpiador()
+        displayInfoPokemon(info)
+        btnClikeado = false
+    }
+}
+
+//funcion para el boton stats
+function btnStat() {
+    if(btnClikeado == false){
+        contentInfo.innerHTML="";
+        btnStats.classList.add("cambiar-color")
+        displayStatsPoke(info);
+        btnClikeado =true
+    }else{
+        limpiador()
+        displayInfoPokemon(info)
+        btnClikeado = false
+    }
+}
+
 
 
 //funcion para llenar el select con los nombres de pokemones disponible
@@ -85,7 +126,10 @@ btnBuscar.addEventListener("click", ()=>{
 
     //agregando animaciones al circulo
     cirucloInterior.classList.add("animacion-circulo");
+    //qintando clase que aumenta y encoge al circulo antes de darle click
+    btnBuscar.classList.remove("btn-busqueda-aumentar")
 })
+
 
 //funcion para llenar info detallada de los pokemones
 function displayInfoPokemon (info){
@@ -131,30 +175,20 @@ function displayInfoPokemon (info){
     baseExpPoke.innerHTML =`Exp base: ${baseExp}`
     baseExperience.appendChild(baseExpPoke)
 
-    const pokeWeigth = info.weight
+    const pokeWeigth = info.weight  //ubicacion de peso pokemon
     const weigthPoke = document.createElement("p")
     weigthPoke.innerHTML= `Peso: ${pokeWeigth}`
     weigth.appendChild(weigthPoke)
 
 }
 
-//funcion para obtener informacion al hacer click boton movements
-function displayMoreInfoPokemon (info){
-    const moves = info.moves
-    const movespoke = document.createElement("p")
-    let movements = "";
-        moves.forEach(ele=>{
-            const movePokemon = ele.move.name
-            
-            movements = `${movements} ${movePokemon}<br>`
-           
-            movespoke.innerHTML= `<b>MOVIMIENTOS POKEMON</b>:<br> ${movements}`
-            movespoke.classList.add("content-p")
-            contentInfo.appendChild(movespoke)
-        })
-    
-    btnChangeInfo.innerHTML = `${moves.length}` //agrega la cantidad de movimientos al boton
-}
+
+
+//listener para quitar la clase que anima el select
+selectList.addEventListener("click",()=>{
+    selectList.classList.remove("intensificar")
+    btnBuscar.classList.add("btn-busqueda-aumentar")
+})
 
 //datos a cargar cuando se carga la pagina por primera vez
 window.addEventListener("load", ()=>{
@@ -176,6 +210,10 @@ window.addEventListener("load", ()=>{
     btnChangeInfo.innerHTML=`
     <img src="/assets/images/ataque.png">
     `;
+    btnStats.innerHTML=`
+    <img src="/assets/images/stats.png">
+    `
+    selectList.classList.add("intensificar") //agrega clase para animar select
 })
 
 

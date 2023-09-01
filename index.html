@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Pokedex Proyect</title>
     <!-- pure css -->
     <link rel="stylesheet" href="index.css">
     <!-- bootstrap css -->
@@ -22,20 +22,21 @@
 
     <!-- seccion principal -->
     <section id="characters">
-        <div class="container mt-2">
+        <div class="container mt-4">
             
 
             <!-- lado izquierdo -->
             <div class="row gx-0 mt-3 d-flex poke" id="pokedex"> 
                 <!-- gx quita el padding por defecto de bootstrap("gutter") -->
-                    <div class="col-5 left">
-                        <!-- <div class="pokedexShape"></div> -->
+                    <div class="col-4 left" id="left">
+                        <div class="pokedexShape"></div>
+                        <div class="pokedexShapeDos"></div>
                         <div class="linea"></div>
                         <div class="curva"></div>
                         <div class="linea2"></div>
                         <div class="luz d-flex">
                             <div class="circulo mx-2">
-                                <div class="circulo-interior"></div>
+                                <div class="circulo-interior" id="inside-circle"></div>
                             </div>
                             <div class="tresLuces d-flex">
                                 <div class="mini-circulo"></div>
@@ -44,7 +45,7 @@
                             </div>
                         </div>
 
-                        <div class="main-display mt-3">
+                        <div class="main-display">
                             <div class="display">
                                 <div class="decoracion-dual">
                                     <div class="extra-mini-circulo"></div>
@@ -63,20 +64,28 @@
                         <div class="pokeName mt-5" id="pokemonName">
                             <!-- <p>Pikachu</p> -->
                         </div>
+
+                        
+                        <div class="btn-decoracion"></div>
+                        <div class="btn-decoracion2"></div>
+                        <div class="joystick"></div>
+                        <div class="joystickDos"></div>
+                        <div class="btn-decoracion-circle"></div>
                     </div> 
 
 
                     <!-- lado derecho -->
-                    <div class="col-5 rigth">
+                    <div class="col-4 rigth" id="rigth">
                         
-                        <div class="rectangulo-vacio"></div>
-                        <div class="vacio-trapecio"></div>
+                        <div class="pokedexShapeTres"></div>
+                        <div class="pokedexShapeCuatro"></div>
 
-                        <div class="d-flex justify-content-evenly buscador">
-                            <select id="list" class="col-6 form-select-sm selector" aria-label="Default select example">
-                                <option selected>Escoge un pokemon</option>    
+                        <div class="d-flex buscador">
+                            <select id="list" class="col-4 form-select-sm selector" aria-label="Default select example">
+                                <option selected>Pokemons</option>    
                             </select>
-                            <button id="btn-buscar" type="button" class="col-4 btn btn-dark">Buscar</button>
+                            <!-- <button  type="button" class="col-1 btn-busqueda"></button> -->
+                            <img id="btn-buscar" class="btn-busqueda" src="/assets/images/utraballBusqueda.png" alt="">
                         </div>
 
                         <div class="info mt-2">
@@ -84,6 +93,24 @@
                                 <!-- <p class="tipo-pokemon">electrico</p> -->
                                 <!-- <p class="habilidades">impact trueno</p> -->
                             </div>
+                        </div>
+
+                        <div class="btnCuadricula" id="contenedor-btn">
+                            <div class="btn-cuadricula" id="btn-change-info"></div>
+                            <div class="btn-cuadricula"></div>
+                            <div class="btn-cuadricula"></div>
+                            <div class="btn-cuadricula"></div>
+                            <div class="btn-cuadricula"></div>
+                            <div class="btn-cuadricula"></div>
+                            <div class="btn-cuadricula"></div>
+                            <div class="btn-cuadricula"></div>
+                            <div class="btn-cuadricula"></div>
+                            <div class="btn-cuadricula"></div>
+                        </div>
+
+                        <div class=" more-info">
+                            <div class="btn-moreInfo" id="baseExperience"></div>
+                            <div class="btn-moreInfo" id="weigth"></div>
                         </div>
 
                     </div>
